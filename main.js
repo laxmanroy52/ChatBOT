@@ -5,8 +5,8 @@ let submit = document.getElementById('submit');
 let response = document.getElementsByClassName('response')[0];
 
 //import all data
-import {data} from '/data.js';
-
+//import {data} from '/data.js';
+alert("Hello");
 let send = () => {
   if (msg.value != '') {
   // get question
