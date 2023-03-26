@@ -74,18 +74,16 @@ let send = () => {
   response.appendChild(bot);
   
   //search and response
-  bot.innerText = '🤖  ';
   if (data[newMsg] == undefined) {
    again: for (let item of Object.keys(data)) {
      let regex = new RegExp(item, "gim");
-     console.log(newMsg.search(regex));
       if (newMsg.search(regex) != -1) {
-        bot.innerText += data[item];
+        bot.innerText += (bot.innerText == '') ? '🤖  ' + data[item] : data[item];
         continue again;
       }
     }
     if (bot.innerText == '') {
-        bot.innerText = "I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion.";
+        bot.innerText += "🤖  I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion.";
       }
   } else {
     bot.innerText = `🤖  ${data[newMsg]}`;
