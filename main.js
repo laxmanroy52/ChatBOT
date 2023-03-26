@@ -48,7 +48,6 @@ let data = {
  'are you help me': "Yes, I am here to help you! Please let me know what you need assistance with, and I will do my best to provide you with the information or guidance you're looking for. Whether you have a question or need advice on a particular topic, I am here to support you to the best of my abilities.",
 }
 
-export {data};
 
 
 
