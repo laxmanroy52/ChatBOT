@@ -1,0 +1,92 @@
+body {
+  background: #343541;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align:center;
+  border-bottom: 1px solid #aaa;
+  padding: 5px 0;
+}
+
+.field {
+  width: 100%;
+  background: #343541;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  border-top: 2px solid red;
+  box-sizing: border-box;
+  text-align: center;
+}
+#msg {
+  background: #40414F;
+  border: 0;
+  height: 35px;
+  width: 90%;
+  border-radius: 0.375rem;
+  font-size: 16px;
+  color: white;
+}
+
+input#msg:focus {
+  border: 0;
+  outline: 0;
+}
+
+#submit {
+  background: #40414F;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  border: 0;
+  width: 40px;
+  height: 37px;
+  font-size: 20px;
+  border-radius: 0.375rem;
+  
+}
+#notice {
+  color: #9A9BA0;
+  font-size: .75rem;
+  text-align: center;
+  padding: 4px;
+}
+#notice > span {
+  text-decoration: underline;
+}
+
+.gap {
+  padding: 55px;
+}
+.response span {
+  text-align: justify;
+  display: block;
+  color: white;
+  background: #40414F;
+  padding: 20px;
+  line-height: 25px;
+}
+p {
+  text-align: justify;
+  color: white;
+  background: inherit;
+  padding: 8px 8px 8px 20px;
+  line-height: 25px;
+}
+
+#voice {
+  display: block;
+  margin: 8px auto 2px auto;
+  background: #343541;
+  border: 0;
+}
+
+#voice > i:focus {
+  color: green;
+}
