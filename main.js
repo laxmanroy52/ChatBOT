@@ -112,7 +112,7 @@ if (true) {
     if (count) {
     count = false
     recog.start();
-    micro.innerHTML = '<i class="fa fa-refresh fa-spin" style="font-size:20px;color: #fff"></i>';
+    micro.innerHTML = '<i class="fa fa-ellipsis fa-flip" style="font-size:20px;color: #fff"></i>';
     } else {
       count = true;
       recog.stop();
@@ -121,7 +121,7 @@ if (true) {
   });
   
   recog.addEventListener('speechstart', function() {
-    micro.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:20px;color: #fff"></i>';
+    micro.innerHTML = '<i class="fa fa-ellipsis fa-shake" style="font-size:20px;color: #fff"></i>';
   })
   
   recog.addEventListener('result', function(e) {
