@@ -1,15 +1,11 @@
 'use strict';
 
+let defaultMsg = document.getElementById('default');
 let msg = document.getElementById('msg');
 let submit = document.getElementById('submit');
 let response = document.getElementsByClassName('response')[0];
 
-//import all data
-
-
-
-
-
+//include all data
 let data = {
   // Phrases to start talking
   hi: " Hello there!",
@@ -49,18 +45,22 @@ let data = {
 }
 
 
-
-
-
-
 let send = () => {
+  // generate time
+  let time = new Date();
+  time = time.toLocaleTimeString('en-us', {hour12: true, hour: 'numeric', minute: 'numeric'}).toLowerCase();
+
   if (msg.value != '') {
+  // clear default message
+  defaultMsg.style = 'margin-top: 10px; transition: .3s';
+  defaultMsg.innerHTML = '<i class="fa fa-handshake fa-beat" style="font-size: 40px; color: red"></i>';
+  
   // get question
   let human = document.createElement('p');
   let text = document.createTextNode('');
   human.appendChild(text);
   response.appendChild(human);
-  human.innerHTML = '🙎 ' + msg.value;
+  human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time">' + time + '</i></div>';
   let value = msg.value;
   
   //Generate answer
@@ -78,15 +78,15 @@ let send = () => {
    again: for (let item of Object.keys(data)) {
      let regex = new RegExp(item, "gim");
       if (newMsg.search(regex) != -1) {
-        bot.innerText += (bot.innerText == '') ? '🤖  ' + data[item] : data[item];
+        bot.innerHTML += (bot.innerHTML == '') ? data[item] + '<i class="time">' + time + '<i>': data[item] + '<i class="time">' + time + '<i>';
         continue again;
       }
     }
-    if (bot.innerText == '') {
-        bot.innerText += "🤖  I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion.";
+    if (bot.innerHTML == '') {
+        bot.innerHTML += "I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion. <i class=\"time\">" + time + "<i>";
       }
   } else {
-    bot.innerText = `🤖  ${data[newMsg]}`;
+    bot.innerHTML = `${data[newMsg]} <i class="time">${time}<i>`;
   }
 //for developer
   console.log('[' + newMsg.length + ']' + newMsg);
@@ -102,42 +102,41 @@ submit.addEventListener('click', send);
 
 
 //Voice recognition
-
 let count = true;
 let micro = document.getElementById('voice');
-let speech = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (speech) {
+//let speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (true) {
   let recog = new webkitSpeechRecognition();
   recog.lang = 'en';
   micro.addEventListener('click', function() {
     if (count) {
     count = false
     recog.start();
-    micro.innerHTML = '<i class="fa fa-refresh fa-spin" style="font-size:30px;color: red"></i>';
+    micro.innerHTML = '<i class="fa fa-refresh fa-spin" style="font-size:20px;color: #fff"></i>';
     } else {
       count = true;
       recog.stop();
-      micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color: red"></i>';
+      micro.innerHTML = '<i class="fa fa-microphone" style="font-size:20px;color: #fff"></i>';
     }
   });
   
   recog.addEventListener('speechstart', function() {
-    micro.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:30px;color: red"></i>';
+    micro.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:20px;color: #fff"></i>';
   })
   
   recog.addEventListener('result', function(e) {
     let trans = e.results[0][0].transcript;
     msg.value = trans;
-    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:20px;color:#fff"></i>';
   });
   
   
   recog.addEventListener('speechend', function() {
-    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:20px;color:#fff"></i>';
     count = true;
   })
   recog.addEventListener('end', function() {
-    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:20px;color:#fff"></i>';
     count = true;
   })
 } else {
