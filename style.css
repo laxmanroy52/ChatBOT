@@ -13,80 +13,113 @@ header {
   padding: 5px 0;
 }
 
+.response {
+  margin-bottom: 75px;
+}
+#default {
+  background: #40414F;
+  color: white;
+  width: 50%;
+  max-width: 300px;
+  padding: 20px 0 15px;
+  margin: 50% auto 0;
+  text-align: center;
+  border-radius: 5px;
+}
+#default > div {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*for chatbot*/
+span {
+  display: inline-block;
+  background-color: #40414F;
+  color: #fff;
+  padding: 5px 10px;
+  max-width: 60%;
+  margin-left: 10px;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  border-radius: 5px;
+  line-height: 20px;
+}
+
+/*for human*/
+.human_response {
+  display: inline-block;
+  background-color:#005C4B;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 10px;
+  max-width: 60%;
+  border-radius: 5px;
+  line-height: 20px;
+  float: right;
+}
+
+p::after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+  clear: both;
+}
+/* for time */
+.time {
+  display: inline-block;
+  font-size: 10px;
+  float: right;
+  transform: translate(5px, 6px);
+}
+
 .field {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto 50px 50px;
+  grid-column-gap: 5px;
+  align-items: center;
   width: 100%;
   background: #343541;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   padding: 10px;
-  border-top: 2px solid red;
   box-sizing: border-box;
   text-align: center;
 }
+
 #msg {
   background: #40414F;
+  height: 40px;
+  padding: 0 20px;
   border: 0;
-  height: 35px;
-  width: 90%;
-  border-radius: 0.375rem;
+  outline: 0;
+  border-radius: 30px;
   font-size: 16px;
   color: white;
 }
 
-input#msg:focus {
-  border: 0;
-  outline: 0;
+#msg::focus {
+  color: #fff;
 }
-
 #submit {
-  background: #40414F;
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  border: 0;
-  width: 40px;
-  height: 37px;
-  font-size: 20px;
-  border-radius: 0.375rem;
-  
-}
-#notice {
-  color: #9A9BA0;
-  font-size: .75rem;
+  display: inline-block;
+  background: #005C4B;
+  width: 45px;
+  height: 45px;
+  line-height: 100%;
   text-align: center;
-  padding: 4px;
-}
-#notice > span {
-  text-decoration: underline;
-}
-
-.gap {
-  padding: 55px;
-}
-.response span {
-  text-align: justify;
-  display: block;
-  color: white;
-  background: #40414F;
-  padding: 20px;
-  line-height: 25px;
-}
-p {
-  text-align: justify;
-  color: white;
-  background: inherit;
-  padding: 8px 8px 8px 20px;
-  line-height: 25px;
+  border-radius: 50%;
+  border: 0;
 }
 
 #voice {
-  display: block;
-  margin: 8px auto 2px auto;
-  background: #343541;
+  display: inline-block;
+  background: #005C4B;
+  width: 45px;
+  height: 45px;
+  line-height: 100%;
+  text-align: center;
+  border-radius: 50%;
   border: 0;
 }
 
-#voice > i:focus {
-  color: green;
-}
