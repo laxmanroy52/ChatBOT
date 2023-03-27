@@ -134,9 +134,11 @@ if (speech) {
   
   recog.addEventListener('speechend', function() {
     micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+    count = true;
   })
   recog.addEventListener('end', function() {
     micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+    count = true;
   })
 } else {
   console.log('Your browser\'s not support microphone');
