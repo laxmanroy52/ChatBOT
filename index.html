@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- include font awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/d7d83b0a4e.js" crossorigin="anonymous"></script>
 
   <!-- include css -->
   <link rel="stylesheet" href="style.css">
@@ -13,35 +13,41 @@
 </head>
 
 <body>
+  <!-- include header -->
   <header>
     ChatBOT
   </header>
   
+  <!-- include response -->
   <div class="response">
     
+    <!-- default messages -->
+    <div id="default">
+      <div>No messages here yet...</div>
+      <i class="fa fa-message fa-shake" style="font-size:48px;color:red"></i>
+    </div>
   </div>
-  
-  
-  <div class="gap"></div>
   
 <!-- add footer -->
 <div class="field">
-      <input id="msg" type="text" />
+  
+  <!-- message field -->
+      <input id="msg" type="text" placeholder="Message"/>
+      
+  <!-- submit button -->
   <button id="submit">
-    <i class="fa fa-paper-plane" style="color: #0085FF;"></i>
+    <i class="fa fa-arrow-right" style="font-size: 20px; color: white;"></i>
   </button>
   
+  <!-- voice button -->
   <button id="voice">
-    <i class="fa fa-microphone" style="font-size:30px;color:red"></i>
+    <i class="fa fa-microphone" style="font-size:20px;color:white;"></i>
   </button>
 
-  <div id="notice">
-  <span>ChatBOT v1.2 Version</span>. Free Research Preview. Our goal is to make AI systems more natural and safe to interact with. Your feedback will help us improve.
-  </div>
 </div>
 
 <!-- include javascript -->
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 </body>
 
 </html>
