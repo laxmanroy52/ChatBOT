@@ -103,22 +103,41 @@ submit.addEventListener('click', send);
 
 //Voice recognition
 
+let count = true;
 let micro = document.getElementById('voice');
 let speech = window.SpeechRecognition || window.webkitSpeechRecognition;
-
 if (speech) {
   let recog = new webkitSpeechRecognition();
-  
+  recog.lang = 'en';
   micro.addEventListener('click', function() {
+    if (count) {
+    count = false
     recog.start();
-    micro.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:30px;color: red"></i>';
+    micro.innerHTML = '<i class="fa fa-refresh fa-spin" style="font-size:30px;color: red"></i>';
+    } else {
+      count = true;
+      recog.stop();
+      micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color: red"></i>';
+    }
   });
+  
+  recog.addEventListener('speechstart', function() {
+    micro.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:30px;color: red"></i>';
+  })
   
   recog.addEventListener('result', function(e) {
     let trans = e.results[0][0].transcript;
     msg.value = trans;
     micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
   });
+  
+  
+  recog.addEventListener('speechend', function() {
+    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+  })
+  recog.addEventListener('end', function() {
+    micro.innerHTML = '<i class="fa fa-microphone" style="font-size:30px;color:red"></i>';
+  })
 } else {
-  console.log('Your browser\' not support microphone');
+  console.log('Your browser\'s not support microphone');
 }
