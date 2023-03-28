@@ -2,6 +2,7 @@ body {
   background: #343541;
   margin: 0;
   padding: 0;
+  font-family: 'Alkatra', cursive;
 }
 
 header {
@@ -88,6 +89,7 @@ p::after {
 }
 
 #msg {
+  font-family: inherit;
   background: #40414F;
   height: 40px;
   padding: 0 20px;
