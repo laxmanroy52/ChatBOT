@@ -78,8 +78,12 @@ let send = () => {
    again: for (let item of Object.keys(data)) {
      let regex = new RegExp(item, "gim");
       if (newMsg.search(regex) != -1) {
-        bot.innerHTML += (bot.innerHTML == '') ? data[item] + '<i class="time">' + time + '<i>': data[item] + '<i class="time">' + time + '<i>';
+        bot.innerHTML += data[item];
         continue again;
+      }
+      if (Object.keys(data)[Object.keys(data).length - 1] == item && bot.innerHTML != '') {
+        bot.innerHTML += `<i class="time"> ${time} <i>`;
+        console.log(bot.innerHTML.length)
       }
     }
     if (bot.innerHTML == '') {
