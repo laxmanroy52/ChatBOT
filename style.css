@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
 body {
   background: #343541;
   margin: 0;
@@ -11,7 +13,6 @@ header {
   color: white;
   text-align:center;
   border-bottom: 1px solid #aaa;
-  padding: 5px 0;
 }
 
 .response {
@@ -40,8 +41,7 @@ span {
   padding: 5px 10px;
   max-width: 60%;
   margin-left: 10px;
-  margin-top: -8px;
-  margin-bottom: -8px;
+  margin-top: -10px;
   border-radius: 5px;
   line-height: 20px;
 }
@@ -53,6 +53,7 @@ span {
   color: #fff;
   padding: 5px 10px;
   margin-right: 10px;
+  margin-top: -10px;
   max-width: 60%;
   border-radius: 5px;
   line-height: 20px;
@@ -86,6 +87,7 @@ p::after {
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
+  border-top: 1px solid #888;
 }
 
 #msg {
@@ -97,11 +99,16 @@ p::after {
   outline: 0;
   border-radius: 30px;
   font-size: 16px;
-  color: white;
+  color: #fff;
+  caret-color: red;
 }
 
-#msg::focus {
-  color: #fff;
+#msg::placeholder {
+  color: gray;
+  font-size: 20px;
+  font-weight: 100;
+  position: relative;
+  top: 2.3px;
 }
 #submit {
   display: inline-block;
