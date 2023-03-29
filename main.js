@@ -83,7 +83,6 @@ let send = () => {
       }
       if (Object.keys(data)[Object.keys(data).length - 1] == item && bot.innerHTML != '') {
         bot.innerHTML += `<i class="time"> ${time} <i>`;
-        console.log(bot.innerHTML.length)
       }
     }
     if (bot.innerHTML == '') {
@@ -94,16 +93,22 @@ let send = () => {
   }
 //for developer
   console.log('[' + newMsg.length + ']' + newMsg);
+  // auto scroll
+  if (document.body.scrollHeight > window.screen.height - 113) {
+  window.scrollTo(0, document.body.scrollHeight);
+  }
   }, 500);
   
   //clear your input value
   msg.value = '';
   }
+  //auto scroll
+  if (document.body.scrollHeight > window.screen.height - 113) {
+  window.scrollTo(0, document.body.scrollHeight);
+  }
 }
 
 submit.addEventListener('click', send);
-
-
 
 //Voice recognition
 let count = true;
