@@ -8,6 +8,9 @@ body {
 }
 
 header {
+  position: relative;
+  top: 0;
+  left: 0;
   font-size: 40px;
   font-weight: bold;
   color: white;
@@ -34,7 +37,7 @@ header {
 }
 
 /*for chatbot*/
-span {
+.chatbot {
   display: inline-block;
   background-color: #40414F;
   color: #fff;
