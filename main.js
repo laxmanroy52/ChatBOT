@@ -60,19 +60,21 @@ let send = () => {
   let text = document.createTextNode('');
   human.appendChild(text);
   response.appendChild(human);
+  human.addEventListener('click', listen);
   human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time">' + time + '</i></div>';
   let value = msg.value;
   
   //Generate answer
   setTimeout(function() {
-  let bot = document.createElement('span');
+  let bot = document.createElement('p');
   let ans = document.createTextNode('');
   let newMsg = value.toLowerCase().replace(/[^\w\s]/gim, '');
   newMsg = newMsg.replace(/\s+/gm, ' ');
   newMsg = (newMsg.slice(-1, newMsg.length) == ' ') ? newMsg.slice(0, -1) : newMsg;
   bot.appendChild(ans);
   response.appendChild(bot);
-  
+  bot.setAttribute('class', 'chatbot');
+  bot.addEventListener('click', listen);
   //search and response
   if (data[newMsg] == undefined) {
    again: for (let item of Object.keys(data)) {
@@ -110,16 +112,16 @@ let send = () => {
 
 submit.addEventListener('click', send);
 
-//Voice recognition
+//Voice to text recognition
 let count = true;
 let micro = document.getElementById('voice');
-//let speech = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (true) {
+let speech = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (speech) {
   let recog = new webkitSpeechRecognition();
   recog.lang = 'en';
   micro.addEventListener('click', function() {
     if (count) {
-    count = false
+    count = false;
     recog.start();
     micro.innerHTML = '<i class="fa fa-ellipsis fa-flip" style="font-size:20px;color: #fff"></i>';
     } else {
@@ -150,4 +152,17 @@ if (true) {
   })
 } else {
   console.log('Your browser\'s not support microphone');
+}
+
+//text to voice recognition
+function listen() {
+ if ('speechSynthesis' in window) {
+  let utterance = new SpeechSynthesisUtterance();
+  let synth = window.speechSynthesis;
+  utterance.text = this.innerText.slice(0, this.innerText.length - 8);
+  synth.speak(utterance);
+  console.log(utterance);
+ } else {
+   console.log('Sorry, your browser doesn\'t support text to speech');
+ }
 }
