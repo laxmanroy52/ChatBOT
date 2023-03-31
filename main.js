@@ -61,6 +61,7 @@ let send = () => {
   human.appendChild(text);
   response.appendChild(human);
   human.addEventListener('click', listen);
+  human.addEventListener('dblclick', copyText);
   human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time">' + time + '</i></div>';
   let value = msg.value;
   
@@ -75,6 +76,7 @@ let send = () => {
   response.appendChild(bot);
   bot.setAttribute('class', 'chatbot');
   bot.addEventListener('click', listen);
+  bot.addEventListener('dblclick', copyText);
   //search and response
   if (data[newMsg] == undefined) {
    again: for (let item of Object.keys(data)) {
@@ -84,14 +86,14 @@ let send = () => {
         continue again;
       }
       if (Object.keys(data)[Object.keys(data).length - 1] == item && bot.innerHTML != '') {
-        bot.innerHTML += `<i class="time"> ${time} <i>`;
+        bot.innerHTML += `<i class="time"> ${time} </i>`;
       }
     }
     if (bot.innerHTML == '') {
-        bot.innerHTML += "I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion. <i class=\"time\">" + time + "<i>";
+        bot.innerHTML += " I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion. <i class=\"time\">" + time + "</i>";
       }
   } else {
-    bot.innerHTML = `${data[newMsg]} <i class="time">${time}<i>`;
+    bot.innerHTML = `${data[newMsg]} <i class="time">${time}</i>`;
   }
 //for developer
   console.log('[' + newMsg.length + ']' + newMsg);
@@ -168,4 +170,15 @@ function listen() {
  } else {
    console.log('Sorry, your browser doesn\'t support text to speech');
  }
+
 }
+//copy system
+let notification = document.getElementById('notification');
+let header = document.querySelector('header').clientHeight;
+function copyText() {
+    navigator.clipboard.writeText(this.innerText.slice(0, this.innerText.length - 8));
+    notification.style.top = `${header + 5}px`;
+    setTimeout(function() {
+      notification.style = 'top: -200px;';
+    }, 1000);
+ }
