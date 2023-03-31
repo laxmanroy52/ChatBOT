@@ -172,7 +172,19 @@ function listen() {
  } else {
    console.log('Sorry, your browser doesn\'t support text to speech');
  }
-
+ let myElement = this;
+ if (myElement.className == 'chatbot') {
+   myElement.style.backgroundColor = '#585965';
+ } else {
+   myElement.children[0].style.backgroundColor = '#40746a';
+ }
+ setTimeout(function() {
+   if (myElement.className == 'chatbot') {
+   myElement.style.backgroundColor = '#40414F';
+ } else {
+   myElement.children[0].style.backgroundColor = '#005C4B';
+ }
+ }, 100);
 }
 //copy system
 let notification = document.getElementById('notification');
