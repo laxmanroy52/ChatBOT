@@ -17,6 +17,21 @@ header {
   text-align:center;
   border-bottom: 1px solid #aaa;
 }
+#notification {
+  position: absolute;
+  top: -200px;
+  left: 5%;
+  width: 90%;
+  box-sizing: border-box;
+  background-color: #005C4B;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  transition: 1s;
+  padding: 5px;
+  z-index: 99;
+}
 
 .response {
   margin-bottom: 75px;
@@ -35,6 +50,7 @@ header {
   text-align: center;
   padding-bottom: 20px;
 }
+
 
 /*for chatbot*/
 .chatbot {
@@ -76,6 +92,7 @@ p::after {
   float: right;
   transform: translate(5px, 6px);
 }
+
 
 .field {
   position: fixed;
