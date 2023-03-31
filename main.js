@@ -61,7 +61,8 @@ let send = () => {
   human.appendChild(text);
   response.appendChild(human);
   human.addEventListener('click', listen);
-  human.addEventListener('dblclick', copyText);
+  human.addEventListener('dragstart', copyText);
+  human.setAttribute('draggable', 'true');
   human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time">' + time + '</i></div>';
   let value = msg.value;
   
@@ -76,7 +77,8 @@ let send = () => {
   response.appendChild(bot);
   bot.setAttribute('class', 'chatbot');
   bot.addEventListener('click', listen);
-  bot.addEventListener('dblclick', copyText);
+  bot.addEventListener('dragstart', copyText);
+  bot.setAttribute('draggable', 'true');
   //search and response
   if (data[newMsg] == undefined) {
    again: for (let item of Object.keys(data)) {
