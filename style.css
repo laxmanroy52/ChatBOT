@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Alkatra', sans-serif;
+  user-select: none;
 }
 
 header {
@@ -28,7 +29,7 @@ header {
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  transition: 1s;
+  transition: .3s;
   padding: 5px;
   z-index: 99;
 }
