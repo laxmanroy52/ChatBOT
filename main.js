@@ -157,11 +157,14 @@ if (speech) {
 //text to voice recognition
 function listen() {
  if ('speechSynthesis' in window) {
-  let utterance = new SpeechSynthesisUtterance();
-  let synth = window.speechSynthesis;
-  utterance.text = this.innerText.slice(0, this.innerText.length - 8);
-  synth.speak(utterance);
-  console.log(utterance);
+  if (!speechSynthesis.speaking) {
+    let utterance = new SpeechSynthesisUtterance();
+    let synth = window.speechSynthesis;
+   utterance.text = this.innerText.slice(0, this.innerText.length - 8);
+    synth.speak(utterance);
+  } else {
+    speechSynthesis.cancel();
+  }
  } else {
    console.log('Sorry, your browser doesn\'t support text to speech');
  }
