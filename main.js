@@ -178,9 +178,22 @@ function listen() {
 let notification = document.getElementById('notification');
 let header = document.querySelector('header').clientHeight;
 function copyText() {
-    navigator.clipboard.writeText(this.innerText.slice(0, this.innerText.length - 8));
-    notification.style.top = `${header + 5}px`;
+    let copyElement = this;
+    navigator.clipboard.writeText(copyElement.innerText.slice(0, copyElement.innerText.length - 8));
+    notification.style.opacity = '.9';
+    
+    if (copyElement.className == 'chatbot') {
+      copyElement.style.backgroundColor = '#585965';
+    } else {
+      copyElement.children[0].style.backgroundColor = '#40746a';
+    }
     setTimeout(function() {
-      notification.style = 'top: -200px;';
-    }, 1000);
+      notification.style.opacity = '0';
+      
+      if (copyElement.className == 'chatbot') {
+      copyElement.style.backgroundColor = '#40414F';
+    } else {
+      copyElement.children[0].style.backgroundColor = '#005C4B';
+    }
+    }, 1500);
  }
