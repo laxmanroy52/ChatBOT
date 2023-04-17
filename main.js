@@ -63,7 +63,7 @@ let send = () => {
   human.addEventListener('click', listen);
   human.addEventListener('dragstart', copyText);
   human.setAttribute('draggable', 'true');
-  human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time">' + time + '</i></div>';
+  human.innerHTML = '<div class="human_response">' + msg.value + '<i class="time" translate="no">' + time + '</i></div>';
   let value = msg.value;
   
   //Generate answer
@@ -88,14 +88,14 @@ let send = () => {
         continue again;
       }
       if (Object.keys(data)[Object.keys(data).length - 1] == item && bot.innerHTML != '') {
-        bot.innerHTML += `<i class="time"> ${time} </i>`;
+        bot.innerHTML += `<i class="time" translate="no"> ${time} </i>`;
       }
     }
     if (bot.innerHTML == '') {
         bot.innerHTML += " I'm sorry, but \"" + value + "\" doesn't seem to be a coherent question or statement. Can you please provide more context or clarify your inquiry? I'll do my best to assist you if you can provide a clear question or topic for discussion. <i class=\"time\">" + time + "</i>";
       }
   } else {
-    bot.innerHTML = `${data[newMsg]} <i class="time">${time}</i>`;
+    bot.innerHTML = `${data[newMsg]} <i class="time" translate="no">${time}</i>`;
   }
 //for developer
   console.log('[' + newMsg.length + ']' + newMsg);
