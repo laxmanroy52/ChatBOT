@@ -1,7 +1,4 @@
-
-# Chatbot
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+#ChatBOT
 
 The Chatbot repository provides a comprehensive framework for building intelligent chatbots using HTML, CSS, and JavaScript. Whether you want to create a chatbot for customer support, information retrieval, or interactive experiences, this repository offers a range of features and capabilities to streamline the development process.
 
@@ -19,13 +16,13 @@ The Chatbot repository provides a comprehensive framework for building intellige
 
 ## Demo
 
-Check out the live demo of the Chatbot in action [here](https://your-demo-url.com).
+Check out the live demo of the Chatbot in action [here]([https://your-demo-url.com](https://laxmanroy52.github.io/ChatBOT/)).
 
 ## Installation
 
 To install and run the Chatbot locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/chatbot.git`
+1. Clone the repository: `gh repo clone laxmanroy52/ChatBOT`
 2. Navigate to the project directory: `cd chatbot`
 3. Open `index.html` in your preferred web browser.
 
@@ -38,11 +35,8 @@ To install and run the Chatbot locally, follow these steps:
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. See the [contributing guidelines](CONTRIBUTING.md) for more information.
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## Acknowledgements
 
@@ -52,8 +46,7 @@ The Chatbot repository is built upon various open-source libraries and resources
 
 If you have any questions or feedback, feel free to reach out:
 
-- Email: your-email@example.com
-- Twitter: [@your-username](https://twitter.com/your-username)
+- Email: luxmanroyluxman@gmail.com
 
 ---
 
