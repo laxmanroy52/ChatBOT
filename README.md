@@ -2,7 +2,7 @@
 
 The Chatbot repository provides a comprehensive framework for building intelligent chatbots using HTML, CSS, and JavaScript. Whether you want to create a chatbot for customer support, information retrieval, or interactive experiences, this repository offers a range of features and capabilities to streamline the development process.
 
-![Chatbot Screenshot](screenshot.png)
+![Chatbot Screenshot](Screenshot_20230620-084538~2.png)
 
 ## Features
 
@@ -16,7 +16,7 @@ The Chatbot repository provides a comprehensive framework for building intellige
 
 ## Demo
 
-Check out the live demo of the Chatbot in action [here]([https://your-demo-url.com](https://laxmanroy52.github.io/ChatBOT/)).
+Check out the live demo of the Chatbot in action [here](https://laxmanroy52.github.io/ChatBOT).
 
 ## Installation
 
@@ -28,7 +28,7 @@ To install and run the Chatbot locally, follow these steps:
 
 ## Usage
 
-1. Customize the conversation flow in the `script.js` file.
+1. Customize the conversation flow in the `main.js` file.
 2. Train the chatbot with relevant data to improve its performance.
 3. Deploy the chatbot on your preferred platform or integrate it into your existing application.
 4. Monitor and analyze chatbot performance using the provided analytics tools.
