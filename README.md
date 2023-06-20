@@ -1,4 +1,4 @@
-##ChatBOT
+## ChatBOT
 
 The Chatbot repository provides a comprehensive framework for building intelligent chatbots using HTML, CSS, and JavaScript. Whether you want to create a chatbot for customer support, information retrieval, or interactive experiences, this repository offers a range of features and capabilities to streamline the development process.
 
