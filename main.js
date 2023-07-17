@@ -155,7 +155,7 @@ if (speech) {
     count = true;
   })
 } else {
-  console.log('Your browser\'s not support microphone');
+  alert('Your browser\'s not support microphone');
 }
 
 //text to voice recognition
